@@ -1,0 +1,49 @@
+.parent {
+  display: flex;
+  justify-content: center;
+}
+body {
+  background-color: #1e1e1e;
+  color: aliceblue;
+  font-family: 'Courier New', Courier, monospace;
+}
+h1 {
+    padding-left: 2%;
+}
+
+a:link {
+  color: #7caded;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #7caded;
+}
+
+a:hover {
+  color: #6384af;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #db9a86;
+}
+
+.child {
+    max-width: 55%;
+    background-color: #151515;
+    padding: 0%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 10px;
+    padding-bottom: 1%;
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .child{
+        max-width: 95%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}

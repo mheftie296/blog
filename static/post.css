@@ -1,0 +1,51 @@
+@import url("blog.css");
+.child {
+    max-width: 70%;
+    background-color: #0e0e0e;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+h1 {
+    padding: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: center;
+    margin: 0%;
+    margin-top: 0px;
+}
+
+.body {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+hr {
+    max-width: 96%;
+}
+
+a {
+    margin-left: 1%;
+}
+
+img {
+    width: 40%;
+    padding-left: 29%;
+}
+
+p {
+    text-align: justify;
+}
+
+h6 {
+    text-align: center;
+    margin-top: -15px;
+    margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 700px) {
+    .child {
+        max-width: 95%;
+    }
+
+}

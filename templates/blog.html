@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='blog.css') }}">
+</head>
+<body>
+    <h1>Latest Blog Posts</h1>
+    <hr>
+    <div class="parent">
+        <div class="child">
+            {% for post in posts %}
+                <article>
+                    <h2>
+                        <!-- Generate link to individual post route -->
+                        <a href="{{ url_for('blogapp.show_post', slug=post.url) }}">{{ post.title }}</a>
+                    </h2>
+                    <p><small>Published on {{ post.date }}</small></p>
+                    <p>{{ post.summary }}</p>
+                </article>
+                {%- if not loop.last %} <hr> {%- endif %}
+            {% else %}
+                <p>No blog posts found.</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
