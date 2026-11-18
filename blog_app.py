@@ -5,7 +5,7 @@ import markdown
 from blog.database.database import db_session
 from blog.database.models import Post
 
-blogapp = Blueprint('blogapp', __name__, template_folder='templates', static_folder='static')
+blogapp = Blueprint('blogapp', __name__, template_folder='templates', static_folder='blog/static')
 
 @blogapp.route("/blog")
 def blog():
@@ -25,13 +25,13 @@ def show_post(slug):
 
 @blogapp.route("/blog/<post_id>/edit", methods=["GET", "POST"])
 def edit_post(post_id):
-    if not blogapp.debug:
-        abort(404)
+    #if not app.debug:
+    #    abort(404)
     post = Post.query.filter(Post.url == post_id).first()
     if post is None:
         if post_id != "new":
             abort(404)
-        post = Post("Edit", "Edit", "2000-0-0", "Edit", "Edit")
+        post = Post("new", "Edit", "2000-0-0", "Edit", "Edit")
     if request.method == "POST":
         if(request.form["slug"] == "new"):
             return
